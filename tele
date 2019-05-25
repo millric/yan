@@ -1,0 +1,8 @@
+git clone https://github.com/TelegramMessenger/MTProxy
+cd MTProxy
+make && cd objs/bin
+pwd
+curl -s https://core.telegram.org/getProxySecret -o proxy-secret
+curl -s https://core.telegram.org/getProxyConfig -o proxy-multi.conf
+head -c 16 /dev/urandom | xxd -ps
+vim /etc/systemd/system/MTProxy.service
